@@ -29,7 +29,7 @@ use GoldSpecDigital\ObjectOrientedOAS\Utilities\Arr;
  * @property int|float|null $multipleOf
  * @property string[]|null $required
  * @property \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema[]|null $properties
- * @property \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|null $additionalProperties
+ * @property \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|boolean|null $additionalProperties
  * @property int|null $maxProperties
  * @property int|null $minProperties
  * @property bool|null $nullable
@@ -162,7 +162,7 @@ class Schema extends BaseObject implements SchemaContract
     protected $properties;
 
     /**
-     * @var \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|null
+     * @var \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|boolean|null
      */
     protected $additionalProperties;
 
@@ -597,10 +597,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|null $additionalProperties
+     * @param \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|boolean|null $additionalProperties
      * @return static
      */
-    public function additionalProperties(?Schema $additionalProperties): self
+    public function additionalProperties(?$additionalProperties): self
     {
         $instance = clone $this;
 
