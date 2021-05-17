@@ -600,7 +600,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param \GoldSpecDigital\ObjectOrientedOAS\Objects\Schema|boolean|null $additionalProperties
      * @return static
      */
-    public function additionalProperties(?$additionalProperties): self
+    public function additionalProperties($additionalProperties = null): self
     {
         $instance = clone $this;
 
